@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfbf7; /* Cream/Off-white paper */
+  --foreground: #0b1c2c; /* Deep Navy text for contrast */
+  
+  /* Brand Colors */
+  --color-navy: #0b1c2c;
+  --color-navy-light: #16324f;
+  --color-gold: #e2ab39;
+  --color-gold-light: #ffd166;
+  --color-paper: #fdfbf7;
 }
 
 @theme inline {
@@ -10,12 +17,19 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Custom Tailwind Theme Extensions */
+  --color-brand-navy: var(--color-navy);
+  --color-brand-navy-light: var(--color-navy-light);
+  --color-brand-gold: var(--color-gold);
+  --color-brand-gold-light: var(--color-gold-light);
+  --color-brand-paper: var(--color-paper);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b1c2c; /* Deep Navy background */
+    --foreground: #fdfbf7; /* Cream text */
   }
 }
 
