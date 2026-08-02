@@ -43,6 +43,13 @@ export default function Home() {
     }
   };
 
+  const handleJoinRoom = () => {
+    const code = window.prompt("Ingresa el código de la sala (Ej: A1B2C3):");
+    if (code && code.trim().length > 0) {
+      router.push(`/lobby/${code.trim().toUpperCase()}`);
+    }
+  };
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-8 text-center bg-brand-navy">
       <div className="relative bg-brand-paper rounded-xl shadow-2xl p-10 max-w-2xl w-full border-t-8 border-brand-gold relative overflow-hidden">
@@ -67,7 +74,10 @@ export default function Home() {
             {isCreating ? "Creando Sala..." : "Crear Sala Nueva"}
           </button>
           
-          <button className="flex items-center justify-center gap-3 bg-brand-navy-light hover:bg-brand-navy text-brand-paper font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95 text-lg border border-brand-gold/30">
+          <button 
+            onClick={handleJoinRoom}
+            className="flex items-center justify-center gap-3 bg-brand-navy-light hover:bg-brand-navy text-brand-paper font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95 text-lg border border-brand-gold/30"
+          >
             <Users className="w-6 h-6 text-brand-gold" />
             Unirse a una Sala
           </button>
