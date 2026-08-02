@@ -24,6 +24,10 @@ export default function LobbyPage() {
       const data = snapshot.val();
       if (data) {
         setRoom(data);
+        // Si el estado de la partida cambia (inicia), redirigir al tablero
+        if (data.turnState && data.turnState !== "WAITING_FOR_PLAYERS") {
+          router.push(`/game/${roomCode}`);
+        }
       } else {
         // La sala no existe o fue eliminada
         setRoom(null);
